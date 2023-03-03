@@ -29,7 +29,7 @@ model.add(Dense(1))
 #3. 컴파일,훈련
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train , epochs=500, batch_size=4)
+model.fit(x_train, y_train , epochs=5000, batch_size=4)
 
 
 #4. 평가, 예측
@@ -39,6 +39,10 @@ print('loss : ',loss)    # 평가까지만 한번 실행하고 로스값 확인�
 
 result=model.predict([11])
 print('[11]의 예측값:', result)
+
+
+#  [11]의 예측값: [[10.999999]]
+
 
 # 차이점 : train과 test 데이터를 분리해서 사용
 
