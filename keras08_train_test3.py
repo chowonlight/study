@@ -25,7 +25,7 @@ x_train, x_test, y_train, y_test = train_test_split(
 print(x_train)
 print(x_test)
 
-# [검색] train과 test를 섞어서, 7:3으로 찾을 수 있는 방법 (4번, 9번라인)
+# [검색] train과 test를 섞어서, 7:3으로 찾을 수 있는 방법 (16번, 17번라인)
 # 힌트 사이킷 런
 
 
