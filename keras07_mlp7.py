@@ -34,7 +34,7 @@ model.add(Dense(3))
 #3. 컴파일, 훈련
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x,y, epochs=30, batch_size=3)
+model.fit(x,y, epochs=3000, batch_size=3)
 
 
 #4. 평가, 예측
@@ -43,4 +43,7 @@ loss=model.evaluate(x,y)
 print('loss= ', loss)
 result=model.predict([[9]])
 print('[9]의 예측값', result)
+
+
+#  [9]의 예측값 [[9.9999990e+00 1.8999994e+00 5.0663948e-07]]
 
