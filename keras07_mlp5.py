@@ -45,3 +45,6 @@ print('loss= ', loss)
 result=model.predict([[9,30,210]])
 print('[9,30,210]의 예측값', result)
 
+
+# [9,30,210]의 예측값 [[9.999972  1.9000057]]
+
