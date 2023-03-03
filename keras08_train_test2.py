@@ -38,7 +38,7 @@ model.add(Dense(1))
 #3. 컴파일, 훈련
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train , epochs=200, batch_size=4)
+model.fit(x_train, y_train , epochs=2000, batch_size=4)
 
 
 #4. 평가, 예측
@@ -48,6 +48,11 @@ print('loss : ', loss)
 
 result=model.predict([11])
 print('[11]의 예측값:', result)
+
+
+#   [11]의 예측값: [[0.00012159]]
+
+
 
 # 문제점 :전체 데이터 범위 <외부의 데이터를 예측> 할때 -> 오차가 큼
 
