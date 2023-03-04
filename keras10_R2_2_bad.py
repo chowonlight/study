@@ -16,10 +16,11 @@
 #8. loss 지표는 mse, mae
 
 
+import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
-import numpy as np
 from sklearn.model_selection import train_test_split 
+from sklearn.metrics import r2_score
 
 
 x=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
@@ -51,7 +52,6 @@ print('loss : ', loss)
 
 y_predict = model.predict(x_test)
 
-from sklearn.metrics import r2_score
 r2 = r2_score(y_test, y_predict)
 print('r2 =', r2)
 
