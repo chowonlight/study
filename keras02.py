@@ -15,6 +15,13 @@ model.compile(loss='mse', optimizer='adam')
 model.fit(x, y, epochs=4000)
 
 
+################ < 작업 결과 > #####################
+
+# 결과 --> 4,000 번째 최종 loss
+
+# Epoch 4000/4000
+# 1/1 [==============================] - 0s 2ms/step - loss: 0.0016
+
 ################ < 수업 내용 > #####################
 
 #  import numpy as np
@@ -32,10 +39,4 @@ model.fit(x, y, epochs=4000)
 #3. 컴파일 훈련
 #  model.compile(loss='mse', optimizer='adam')
 #  model.fit(x, y, epochs=4000)
-
-
-# 결과 --> 4,000 번째 최종 loss
-
-# Epoch 4000/4000
-# 1/1 [==============================] - 0s 2ms/step - loss: 0.0016
-#
+# 
