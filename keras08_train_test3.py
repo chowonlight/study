@@ -1,57 +1,112 @@
 
+############# < 정리된 실행 부분 > #################
+
+
 import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from sklearn.model_selection import train_test_split 
 
+x=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+y=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 
-#1. 데이터
-
-x=np.array([1,2,3,4,5,6,7,8,9,10])
-y=np.array([1,2,3,4,5,6,7,8,9,10])
-
-x_train, x_test, y_train, y_test = train_test_split(
-    x,y, 
-
-    train_size=0.7,  # train_size를 사용하거나, test_size를 사용 하거나 상관없음
-    test_size=0.3,  # 단, 둘 사이즈의 합이 1을 넘어가면, 에러가 발생하고, 값을 줄이라고 함
-    random_state=1234,  # 디폴트 값이 랜덤
-    shuffle=False)   # shuffle은 디폴트가 True
-
-# 1~10중 랜덤으로 값을 뽑아내지만 
-# 데이터가 계속 변경된다면, 잘 만들어진건지 판단이 어려움
-# 이것을 잡아주는게 random_state 또는 랜덤시드라고 부른다
+x_train, x_test, y_train, y_test = train_test_split(x, y, 
+    train_size=0.7,     
+    test_size=0.3,      
+    random_state=1234,  
+    shuffle=True)      
 
 print(x_train)
 print(x_test)
+print()
 
-# [검색] train과 test를 섞어서, 7:3으로 찾을 수 있는 방법 (16번, 17번라인)
-# 힌트 사이킷 런
-
-
-#2. 모델구성
 
 model = Sequential()
 model.add(Dense(1, input_dim=1))
 model.add(Dense(1))
 
-
-#3. 컴파일, 훈련
-
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=5000, batch_size=4)
+model.fit(x_train, y_train, epochs=10000, batch_size=4)
 
-
-#4. 평가, 예측
 
 loss= model.evaluate(x_test, y_test)
 print('loss : ', loss) 
 
 result=model.predict([11])
-print('[11]의 예측값:', result)
+print('[11]의 예측값 :', result)
 
 
-#  [11]의 예측값: [[10.999993]]
+################ < 작업 결과 > #####################
 
 
+#  [2 1 9 5 6 7 4]
+#  [ 8  3 10] 
+#  
+#  Epoch 10000/10000
+#  2/2 [==============================] - 0s 971us/step - loss: 0.0000e+00
+#  1/1 [==============================] - 0s 107ms/step - loss: 7.5791e-14
+#  loss :  7.579122740649855e-14
+#  1/1 [==============================] - 0s 70ms/step
+#  [11]의 예측값 : [[11.]]
 
+
+################ < 수업 내용 > #####################
+
+#  import numpy as np
+#  from tensorflow.keras.models import Sequential
+#  from tensorflow.keras.layers import Dense
+#  from sklearn.model_selection import train_test_split 
+
+
+#1. 데이터
+
+#  x=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+#  y=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+
+#  x_train, x_test, y_train, y_test = train_test_split(x, y, 
+                                                    
+#      train_size=0.7,     #  train_size를 사용하거나, test_size를 사용 하거나 상관없음
+#      test_size=0.3,      #  단, 둘 사이즈의 합이 1을 넘어가면, 에러가 발생하고, 값을 줄이라고 함
+#      random_state=1234,  #  디폴트 값이 랜덤
+#      shuffle=True)       #  shuffle은 디폴트가 True 임
+
+# 1 ~ 10중 랜덤으로 값을 뽑아내지만 
+# 데이터가 계속 변경된다면, 잘 만들어진건지 판단이 어려움
+# 이것을 잡아주는게 random_state 또는 랜덤시드라고 부른다
+
+#  print(x_train)
+#  print(x_test)
+#  print()
+
+# [검색] train과 test를 섞어서, 7:3으로 찾을 수 있는 방법 (18번, 19번라인)
+# 힌트 사이킷 런
+
+
+#2. 모델구성
+
+#  model = Sequential()
+#  model.add(Dense(1, input_dim=1))
+#  model.add(Dense(1))
+
+
+#3. 컴파일, 훈련
+
+#  model.compile(loss='mse', optimizer='adam')
+#  model.fit(x_train, y_train, epochs=10000, batch_size=4)
+
+
+#4. 평가, 예측
+
+#  loss= model.evaluate(x_test, y_test)
+#  print('loss : ', loss) 
+
+#  result=model.predict([11])
+#  print('[11]의 예측값 :', result)
+
+
+#  ---> 가시적인 확인을 위해서 다시 프린트 함
+#  print(x_train)
+#  print(x_test)
+#  print()
+#
+#
