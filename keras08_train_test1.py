@@ -7,14 +7,14 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
 
-x=np.array([1,2,3,4,5,6,7,8,9,10])
-y=np.array([10,9,8,7,6,5,4,3,2,1])
+x=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+y=np.array([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
-x_train = np.array([1,2,3,4,5,6,7])  
-y_train = np.array([1,2,3,4,5,6,7])
+x_train = np.array([1, 2, 3, 4, 5, 6, 7])  
+y_train = np.array([1, 2, 3, 4, 5, 6, 7])
 
-x_test= np.array([8,9,10])  
-y_test= np.array([8,9,10])
+x_test= np.array([8, 9, 10])  
+y_test= np.array([8, 9, 10])
 
 
 model = Sequential()
@@ -53,14 +53,14 @@ print('[11]의 예측값:', result)
 
 #1. 데이터
 
-#  x=np.array([1,2,3,4,5,6,7,8,9,10])
-#  y=np.array([10,9,8,7,6,5,4,3,2,1])
+#  x=np.array([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
+#  y=np.array([10, 9, 8, 7, 6, 5, 4, 3, 2, 1])
 
-#  x_train = np.array([1,2,3,4,5,6,7])   # 훈련 데이터 7개
-#  y_train = np.array([1,2,3,4,5,6,7])
+#  x_train = np.array([1, 2, 3, 4, 5, 6, 7])   # 훈련 데이터 7개
+#  y_train = np.array([1, 2, 3, 4, 5, 6, 7])
 
-#  x_test= np.array([8,9,10])   # 테스트 데이터 3개
-#  y_test= np.array([8,9,10])
+#  x_test= np.array([8, 9, 10])   # 테스트 데이터 3개
+#  y_test= np.array([8, 9, 10])
 
 
 #2. 모델구성
