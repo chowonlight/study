@@ -21,6 +21,13 @@ model.compile(loss='mse', optimizer='adam')
 model.fit(x, y, epochs=1000)
 
 
+################ < 작업 결과 > #####################
+
+# 결과 --> 1,000 번째 최종 loss
+
+# Epoch 1000/1000
+# 1/1 [==============================] - 0s 972us/step - loss: 0.0018
+
 ################ < 수업 내용 > #####################
 
 
@@ -48,9 +55,4 @@ model.fit(x, y, epochs=1000)
 
 #  model.compile(loss='mse', optimizer='adam')
 #  model.fit(x, y, epochs=1000)
-
-# 결과 --> 1,000 번째 최종 loss
-
-# Epoch 1000/1000
-# 1/1 [==============================] - 0s 972us/step - loss: 0.0018
 #
