@@ -26,17 +26,17 @@ x_train, x_test, y_train, y_test = train_test_split(x, y,
 
 
 model = Sequential()
-model.add(Dense(10, input_dim=9))
-model.add(Dense(20))
-model.add(Dense(30))
-model.add(Dense(40))
-model.add(Dense(30))
+model.add(Dense(12, input_dim=9))
+model.add(Dense(24))
+model.add(Dense(48))
+model.add(Dense(24))
 model.add(Dense(12))
+model.add(Dense(6))
 model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=300, batch_size=70, verbose=0)
+model.fit(x_train, y_train, epochs=150, batch_size=60, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -59,7 +59,7 @@ y_submit=model.predict(test_csv)
 
 submission = pd.read_csv(path+'submission.csv', index_col=0)
 submission['count'] = y_submit
-submission.to_csv(path + 'submit_0306_0507.csv')
+submission.to_csv(path + 'submit_0306_0508.csv')
 
 
 ################  < 작업 결과 >  ##################
@@ -160,10 +160,24 @@ submission.to_csv(path + 'submit_0306_0507.csv')
 
 #********* ( No.8 )  ***********
 
+# model = Sequential()
+# model.add(Dense(12, input_dim=9))
+# model.add(Dense(24))
+# model.add(Dense(48))
+# model.add(Dense(24))
+# model.add(Dense(12))
+# model.add(Dense(6))
+# model.add(Dense(1))
+
+# submission.to_csv(path + 'submit_0306_0507.csv')
+#     random_state=300)
+# model.fit(x_train, y_train, epochs=150, batch_size=60, verbose=0)
+
+# r2 = 0.6284077139513462
+# RMSE :  49.705450036067944
 
 
-
-
+#********* ( No.9 )  ***********
 
 
 
