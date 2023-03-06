@@ -66,7 +66,7 @@ print('[10, 1.7]의 예측값', result)
 # w = x.transpose()  ---> 전치 행렬 만들기
 #  w = x.T
 
-#  print(w.shape) #(2, 10) ---> 10개의 특성을 가진 2개의 데이터
+#  print(w.shape) #(10, 2) ---> 2개의 특성을 가진 10개의 데이터
 #  print(y.shape) #(10,)
 
 #  print()  ---> 한 칸 띄워 출력하기
