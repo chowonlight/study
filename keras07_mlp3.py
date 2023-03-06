@@ -13,11 +13,12 @@ x = np.array(
 )
 y = np.array([11, 12, 13, 14, 15, 16, 17, 18 , 19, 20])
 
-w = x.T
-
-print(w.shape) 
+print(x.shape) 
 print(y.shape) 
-print()
+
+x = x.T
+
+print(x.shape) 
 
 model= Sequential()
 model.add(Dense(3, input_dim=3))
@@ -27,9 +28,9 @@ model.add(Dense(3))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(w, y, epochs=5000, batch_size=32)
+model.fit(x, y, epochs=5000, batch_size=32)
 
-loss=model.evaluate(w,y)
+loss=model.evaluate(x,y)
 print('loss= ', loss)
 
 result=model.predict([[10, 1.7, 0]])
@@ -66,10 +67,10 @@ print('[10, 1.7, 0]의 예측값 = ', result)
 #  )
 #  y = np.array([11, 12, 13, 14, 15, 16, 17, 18 , 19, 20])
 
-# x=(3, 10) 행렬 -> w=(10, 3)행렬로 바꾼 후 print
-# w = x.transpose()
+# x --> (3, 10) 행렬을 (10, 3)행렬로 바꾼 후 print
 
-#  w = x.T
+# x = x.transpose()
+#  x = x.T
 
 
 #2. 모델구성
@@ -85,12 +86,12 @@ print('[10, 1.7, 0]의 예측값 = ', result)
 #3. 컴파일.훈련
 
 #  model.compile(loss='mse', optimizer='adam')
-#  model.fit(w, y, epochs=5000, batch_size=32)
+#  model.fit(x, y, epochs=5000, batch_size=32)
 
 
 #4. 평가, 예측
 
-#  loss=model.evaluate(w, y)
+#  loss=model.evaluate(x, y)
 #  print('loss= ', loss)
 
 #  result=model.predict([[10, 1.7, 0]])
