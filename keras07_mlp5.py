@@ -65,22 +65,22 @@ print('[9, 30, 210]의 예측값', result)
 
 #1. 데이터
 
-#  x=np.array([range(9), range(21, 30), range(201, 210)])    #(3, 10)
+#  x=np.array([range(9), range(21, 30), range(201, 210)])    
 
-#  print(x.shape)  
+#  print(x.shape)  #(3, 10)
 
-#  x = x.T   #(10, 3)
+#  x = x.T   
 
-#  print(x.shape)  
+#  print(x.shape)   #(10, 3)
 
 #  y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
-#              [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]])   #(2, 10)
+#              [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]])  
 
-#  print(y.shape)  
+#  print(y.shape)   #(2, 10)
 
-#  y = y.T  #(10, 2)
+#  y = y.T 
 
-#  print(y.shape)  
+#  print(y.shape)   #(10, 2)
 
 
 # 예측 : [[9, 30, 210]] ---> 예상 : y값 10, 1.9
