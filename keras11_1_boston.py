@@ -22,7 +22,7 @@ x_train, x_test, y_train, y_test = train_test_split(x, y,
     random_state=800)
 
 model = Sequential()
-model.add(Dense(16, input_dim=13))
+model.add(Dense(8, input_dim=13))
 model.add(Dense(24))
 model.add(Dense(36))
 model.add(Dense(48))
@@ -33,7 +33,7 @@ model.add(Dense(8))
 model.add(Dense(1))
 
 model.compile(loss='mae', optimizer='adam')
-model.fit(x_train, y_train, epochs=650, batch_size=10)
+model.fit(x_train, y_train, epochs=850, batch_size=10)
 
 loss= model.evaluate(x_test, y_test)
 print('loss : ', loss) 
@@ -47,12 +47,12 @@ print('r2 =', r2)
 ################ < 작업 결과 > #####################
 
 
-#  Epoch 650/650
-#  36/36 [==============================] - 0s 1ms/step - loss: 3.4802
-#  5/5 [==============================] - 0s 0s/step - loss: 3.3594
-#  loss :  3.3593509197235107
-#  5/5 [==============================] - 0s 961us/step
-#  r2 = 0.7347395847390887
+#  Epoch 850/850
+#  36/36 [==============================] - 0s 1ms/step - loss: 3.2927
+#  5/5 [==============================] - 0s 4ms/step - loss: 3.3067
+#  loss :  3.306687116622925
+#  5/5 [==============================] - 0s 0s/step
+#  r2 = 0.743070950538335
 
 
 ################ < 수업 내용 > #####################
@@ -100,7 +100,7 @@ print('r2 =', r2)
 #2. 모델 구성
 
 #  model = Sequential()
-#  model.add(Dense(16, input_dim=13))
+#  model.add(Dense(8, input_dim=13))
 #  model.add(Dense(24))
 #  model.add(Dense(36))
 #  model.add(Dense(48))
@@ -114,7 +114,7 @@ print('r2 =', r2)
 #3. 컴파일 훈련
 
 #  model.compile(loss='mae', optimizer='adam')
-#  model.fit(x_train, y_train, epochs=650, batch_size=10)
+#  model.fit(x_train, y_train, epochs=850, batch_size=10)
 
 
 #4. 평가, 예측
