@@ -6,7 +6,7 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
-x=np.array([range(9), range(21, 30), range(201, 210
+x=np.array([range(10), range(21, 31), range(201, 211)])
 print(x.shape)
                                            
 x = x.T  
