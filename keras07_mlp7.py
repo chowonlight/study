@@ -106,6 +106,6 @@ print('[9]의 예측값', result)
 #  print('loss= ', loss)
 
 #  result=model.predict([[9]])
-#  print('[9]의 예측값', result)
+#  print('[9]의 예측값', result)   ---> 예상치 ==> [10, 1.9, 0]
 #
 #
