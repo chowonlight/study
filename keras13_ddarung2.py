@@ -36,7 +36,7 @@ model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=700, batch_size=80, verbose=0)
+model.fit(x_train, y_train, epochs=300, batch_size=70, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -59,7 +59,7 @@ y_submit=model.predict(test_csv)
 
 submission = pd.read_csv(path+'submission.csv', index_col=0)
 submission['count'] = y_submit
-submission.to_csv(path + 'submit_0306_0506.csv')
+submission.to_csv(path + 'submit_0306_0507.csv')
 
 
 ################  < 작업 결과 >  ##################
@@ -148,6 +148,19 @@ submission.to_csv(path + 'submit_0306_0506.csv')
 
 
 #********* ( No.7 )  ***********
+
+# 모델은 동일함
+# submission.to_csv(path + 'submit_0306_0506.csv')
+#     random_state=300)
+# model.fit(x_train, y_train, epochs=300, batch_size=70, verbose=0)
+
+# r2 = 0.6312793867518595
+# RMSE :  49.51301516165311
+
+
+#********* ( No.8 )  ***********
+
+
 
 
 
