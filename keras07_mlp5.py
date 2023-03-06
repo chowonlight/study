@@ -6,18 +6,18 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
-x=np.array([range(10), range(21, 31), range(201, 211)]) 
-w = x.T 
-
+x=np.array([range(9), range(21, 30), range(201, 210)]) 
 y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
             [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]]) 
-z = y.T 
 
 print(x.shape)  
-print(w.shape)  
 print(y.shape)  
-print(z.shape)  
-print()   
+
+x = x.T
+y = y.T 
+
+print(x.shape)  
+print(y.shape)  
 
 model= Sequential()
 model.add(Dense(3, input_dim=3))
@@ -27,9 +27,9 @@ model.add(Dense(3))
 model.add(Dense(2))
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(w, z, epochs=10000, batch_size=3)
+model.fit(x, y, epochs=10000, batch_size=3)
 
-loss=model.evaluate(w, z)
+loss=model.evaluate(x, y)
 print('loss= ', loss)
 
 result=model.predict([[9, 30, 210]])
@@ -67,19 +67,20 @@ print('[9, 30, 210]의 예측값', result)
 
 #  x=np.array([range(10), range(21, 31), range(201, 211)])    #(3, 10)
 
-#  w = x.T   #(10, 3)
+#  print(x.shape)  
 
+#  x = x.T   #(10, 3)
+
+#  print(x.shape)  
 
 #  y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
 #              [1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9]])   #(2, 10)
 
-#  z = y.T  #(10, 2)
-
-#  print(x.shape)  
-#  print(w.shape)  
 #  print(y.shape)  
-#  print(z.shape)  
-#  print()   
+
+#  y = y.T  #(10, 2)
+
+#  print(y.shape)  
 
 
 # 예측 : [[9, 30, 210]] ---> 예상 : y값 10, 1.9
@@ -97,23 +98,15 @@ print('[9, 30, 210]의 예측값', result)
 #3. 컴파일, 훈련
 
 #  model.compile(loss='mse', optimizer='adam')
-#  model.fit(w, z, epochs=10000, batch_size=3)
+#  model.fit(x, y, epochs=10000, batch_size=3)
 
 
 #4. 평가, 예측
 
-#  loss=model.evaluate(w, z)
+#  loss=model.evaluate(x, y)
 #  print('loss= ', loss)
 
 #  result=model.predict([[9, 30, 210]])
 #  print('[9, 30, 210]의 예측값', result)
-
-
-#  ---> 가시적인 확인을 위해서 다시 한 번 더 출력
-#  print()    
-#  print(x.shape)   #(3, 10)   
-#  print(w.shape)   #(10, 3)
-#  print(y.shape)   #(2, 10)
-#  print(z.shape)   #(10, 2)
 #  
 #  
