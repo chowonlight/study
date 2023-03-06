@@ -23,7 +23,6 @@ y = np.array([11, 12, 13, 14, 15, 16, 17, 18, 19, 20])
 
 print(x.shape) 
 print(y.shape) 
-print()
 
 model = Sequential()
 model.add(Dense(3, input_dim=2))   
@@ -81,8 +80,6 @@ print("[[10, 1.4]]의 예측값 = ", result)
 
 #  print(x.shape) # (10, 2)  --> 2개의 특성을 가진 10개의 데이터
 #  print(y.shape) # (10,)
-
-#  print()  --> 한 칸 띠워 출력하기 
 
 
 #2. 모델 
