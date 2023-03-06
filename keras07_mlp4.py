@@ -6,17 +6,17 @@ import numpy as np
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 
-x=np.array([range(10), range(21, 31), range(201, 211)])  
-w = x.T  
-
+x=np.array([range(9), range(21, 30), range(201, 210
+print(x.shape)
+                                           
+x = x.T  
+print(x.shape)
+                                           
 y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]])  
-z = y.T  
+print(y.shape)
 
-print(x.shape)  
-print(w.shape)  
+y = y.T  
 print(y.shape)  
-print(z.shape)  
-print()   
 
 model= Sequential()
 model.add(Dense(3, input_dim=3))
@@ -26,9 +26,9 @@ model.add(Dense(3))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(w, z, epochs=5000, batch_size=3)
+model.fit(x, y, epochs=5000, batch_size=3)
 
-loss=model.evaluate(w, z)
+loss=model.evaluate(x, y)
 print('loss= ', loss)
 
 result=model.predict([[9, 30, 210]])
@@ -64,18 +64,18 @@ print('[9, 30, 210]의 예측값 = ', result)
 
 #1. 데이터
 
-#  x=np.array([range(10), range(21, 31), range(201, 211)])   #(3, 10)
-#  w = x.T   #(10, 3)
-
-#  y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]])   #(1, 10)
-#  z = y.T   #(10, 1)
-
-# print(x)
+#  x=np.array([range(10), range(21, 31), range(201, 211)])  
+#  print(x)
 #  print(x.shape)   #(3, 10)
-#  print(w.shape)   #(10, 3)
+
+#  x = x.T   
+#  print(x.shape) #(10, 3)
+
+#  y=np.array([[1, 2, 3, 4, 5, 6, 7, 8, 9, 10]])   
 #  print(y.shape)   #(1, 10)
-#  print(z.shape)   #(10, 1)
-#  print()   
+
+#  y = y.T   
+#  print(y.shape)   #(10, 1)
 
 
 #2. 모델구성
@@ -91,22 +91,15 @@ print('[9, 30, 210]의 예측값 = ', result)
 #3. 컴파일, 훈련
 
 #  model.compile(loss='mse', optimizer='adam')
-#  model.fit(w, z, epochs=5000, batch_size=3)
+#  model.fit(x, y, epochs=5000, batch_size=3)
 
 
 #4. 평가, 예측
 
-#  loss=model.evaluate(w, z)
+#  loss=model.evaluate(x, y)
 #  print('loss= ', loss)
 
 #  result=model.predict([[9, 30, 210]])
 #  print('[9, 30, 210]의 예측값 = ', result)
-
-
-#  print()    
-#  print(x.shape)   #(3, 10)   ---> 가시적인 확인을 위해서 다시 한 번 더 출력
-#  print(w.shape)   #(10, 3)
-#  print(y.shape)   #(1, 10)
-#  print(z.shape)   #(10, 1)
 #   
 #
