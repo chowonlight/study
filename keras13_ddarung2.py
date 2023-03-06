@@ -3,46 +3,40 @@
 
 
 import numpy as np
+import pandas as pd
 from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import r2_score, mean_squared_error
-import pandas as pd
 
 
 path = './_data/ddarung/'     
 
 train_csv = pd.read_csv(path+'train.csv', index_col=0)   
-
 test_csv = pd.read_csv(path+'test.csv', index_col=0)
-
 train_csv = train_csv.dropna()    
-
 
 x = train_csv.drop(['count'], axis=1)
 y = train_csv['count']
 
-
 x_train, x_test, y_train, y_test = train_test_split(x, y, 
     train_size=0.7,  
     shuffle=True,
-    random_state=800)
+    random_state=1500)
 
 
 model = Sequential()
-model.add(Dense(12, input_dim=9))
-model.add(Dense(24))
+model.add(Dense(24, input_dim=9))
 model.add(Dense(48))
-model.add(Dense(96))
+model.add(Dense(126))
 model.add(Dense(48))
 model.add(Dense(24))
 model.add(Dense(12))
-model.add(Dense(6))
 model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=2000, batch_size=500, verbose=0)
+model.fit(x_train, y_train, epochs=300, batch_size=10, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -50,9 +44,7 @@ print('loss : ', loss)
 
 
 y_predict=model.predict(x_test)
-
 r2 = r2_score(y_test, y_predict)
-
 print('r2 =', r2)
 
 
@@ -60,23 +52,20 @@ def RMSE(y_test, y_predict):
     return np.sqrt(mean_squared_error(y_test, y_predict))
 
 rmse = RMSE(y_test, y_predict)  
-
 print("RMSE : ", rmse)
 
 
 y_submit=model.predict(test_csv)
 
 submission = pd.read_csv(path+'submission.csv', index_col=0)
-
 submission['count'] = y_submit
-
-submission.to_csv(path + 'submit_0306_0502.csv')
+submission.to_csv(path + 'submit_0306_0505.csv')
 
 
 ################  < 작업 결과 >  ##################
 
 
-#### ( No.1 )
+#### ( No.2 )  ##################
 
 # model = Sequential()
 # model.add(Dense(12, input_dim=9))
@@ -98,7 +87,51 @@ submission.to_csv(path + 'submit_0306_0502.csv')
 
 
 
-#### ( No.2 )
+#### ( No.3 )  ##################
+
+
+# 모델은 동일함
+# submission.to_csv(path + 'submit_0306_0502.csv')
+#     random_state=1500)
+# model.fit(x_train, y_train, epochs=320, batch_size=30, verbose=0)
+
+# r2 = 0.6100956554267617
+# RMSE :  47.995483663939254
+
+
+#### ( No.4 )  ##################
+
+
+# 모델은 동일함
+# submission.to_csv(path + 'submit_0306_0503.csv')
+#     random_state=1500)
+# model.fit(x_train, y_train, epochs=500, batch_size=30, verbose=0)
+
+# r2 = 0.6103661810705288
+# RMSE :  47.978830525498765
+
+
+#### ( No.5 )  ##################
+
+
+# model = Sequential()
+# model.add(Dense(24, input_dim=9))
+# model.add(Dense(48))
+# model.add(Dense(126))
+# model.add(Dense(48))
+# model.add(Dense(24))
+# model.add(Dense(12))
+# model.add(Dense(1))
+
+# submission.to_csv(path + 'submit_0306_0504.csv')
+#     random_state=1500)
+# model.fit(x_train, y_train, epochs=300, batch_size=10, verbose=0)
+
+# r2 = 0.6110284604846858
+# RMSE :  47.93803721616891
+
+
+#### ( No.6 )  ##################
 
 
 
