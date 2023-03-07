@@ -65,7 +65,7 @@ model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=700, batch_size=2000, verbose=0)
+model.fit(x_train, y_train, epochs=600, batch_size=2000, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -91,7 +91,7 @@ submission = pd.read_csv(path+'sampleSubmission.csv', index_col=0)
 submission['count'] = y_submit
 
 path2 = './_save/kaggle_bike/' 
-submission.to_csv(path2 + 'submit_0307_002.csv')
+submission.to_csv(path2 + 'submit_0307_003.csv')
 
 
 
@@ -135,7 +135,15 @@ submission.to_csv(path2 + 'submit_0307_002.csv')
 
 #------------------
 
+# r2 = 0.32770557450924587
+# RMSE :  143.82547751491177
 
+# 위와 동일한 모델
+#    random_state=1000)
+# model.fit(x_train, y_train, epochs=600, batch_size=2000, verbose=0)
+# submission.to_csv(path2 + 'submit_0307_002.csv')
+
+#--------------------
 
 
 
