@@ -26,17 +26,17 @@ x_train, x_test, y_train, y_test = train_test_split(x, y,
 
 
 model = Sequential()
-model.add(Dense(12, input_dim=9))
-model.add(Dense(24))
-model.add(Dense(48))
-model.add(Dense(24))
+model.add(Dense(20, input_dim=9))
+model.add(Dense(16, activation='relu'))
+model.add(Dense(24, activation='relu'))
+model.add(Dense(16, activation='relu'))
 model.add(Dense(12))
 model.add(Dense(6))
 model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=150, batch_size=60, verbose=0)
+model.fit(x_train, y_train, epochs=350, batch_size=130, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -59,7 +59,9 @@ y_submit=model.predict(test_csv)
 
 submission = pd.read_csv(path+'submission.csv', index_col=0)
 submission['count'] = y_submit
-submission.to_csv(path + 'submit_0306_0508.csv')
+
+path2 = './_save/ddarung/'     
+submission.to_csv(path2 + 'submit_0306_0509.csv')
 
 
 ################  < 작업 결과 >  ##################
@@ -121,8 +123,8 @@ submission.to_csv(path + 'submit_0306_0508.csv')
 # model.add(Dense(1))
 
 # submission.to_csv(path + 'submit_0306_0504.csv')
-#     random_state=1500)
-# model.fit(x_train, y_train, epochs=300, batch_size=10, verbose=0)
+#     random_state=300)
+# model.fit(x_train, y_train, epochs=350, batch_size=130, verbose=0)
 
 # r2 = 0.6110284604846858
 # RMSE :  47.93803721616891
@@ -183,9 +185,26 @@ submission.to_csv(path + 'submit_0306_0508.csv')
 #********* ( No.9 )  ***********
 
 
+# submission.to_csv(path + 'submit_0306_0508.csv')
 
 
+#********* ( No.10 )  ***********
 
+# model = Sequential()
+# model.add(Dense(20, input_dim=9))
+# model.add(Dense(16, activation='relu'))
+# model.add(Dense(24, activation='relu'))
+# model.add(Dense(16, activation='relu'))
+# model.add(Dense(12))
+# model.add(Dense(6))
+# model.add(Dense(1))
+
+# submission.to_csv(path + 'submit_0306_0509.csv')
+#     random_state=300)
+# model.fit(x_train, y_train, epochs=150, batch_size=60, verbose=0)
+
+# r2 = 0.6553451813919591
+# RMSE :  47.86993554648467
 
 
 ################  < 수업 내용 >  ##################
