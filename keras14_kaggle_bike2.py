@@ -45,7 +45,7 @@ y = train_csv['count']
 x_train, x_test, y_train, y_test = train_test_split(x, y, 
     train_size=0.7,  
     shuffle=True,
-    random_state=700)
+    random_state=1000)
 
 # print(x_train.shape, x_test.shape)   
 # print(y_train.shape, y_test.shape)   
@@ -56,7 +56,7 @@ model.add(Dense(12, input_dim=8))
 model.add(Dense(24, activation='relu'))
 model.add(Dense(48, activation='relu'))
 model.add(Dense(62, activation='relu'))
-model.add(Dense(124, activation='relu'))
+model.add(Dense(86, activation='relu'))
 model.add(Dense(62, activation='relu'))
 model.add(Dense(48, activation='relu'))
 model.add(Dense(24, activation='relu'))
@@ -65,7 +65,7 @@ model.add(Dense(1))
 
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=700, batch_size=300, verbose=0)
+model.fit(x_train, y_train, epochs=700, batch_size=2000, verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
@@ -91,16 +91,51 @@ submission = pd.read_csv(path+'sampleSubmission.csv', index_col=0)
 submission['count'] = y_submit
 
 path2 = './_save/kaggle_bike/' 
-submission.to_csv(path2 + 'submit_0307_001.csv')
+submission.to_csv(path2 + 'submit_0307_002.csv')
 
 
 
 ################  < 작업 결과 >  ##################
 
 
-# ( 현재까지 작업 중, 가장 좋은 결과 )
+# ( 작업 중, 가장 좋은 결과들 모음 )
 
 # r2 = 0.32323733195602444
 # RMSE :  146.79071851619048
+
+# r2 = 0.3059892250809192
+# RMSE :  146.12992994533235
+
+# r2 = 0.31776197757603697
+# RMSE :  144.8852015938704
+
+# r2 = 0.31859675448754843
+# RMSE :  144.79653470856368
+
+#------------------
+
+# r2 = 0.32013177053489894
+# RMSE :  144.63334916265177
+
+# model = Sequential()
+# model.add(Dense(12, input_dim=8))
+# model.add(Dense(24, activation='relu'))
+# model.add(Dense(48, activation='relu'))
+# model.add(Dense(62, activation='relu'))
+# model.add(Dense(86, activation='relu'))
+# model.add(Dense(62, activation='relu'))
+# model.add(Dense(48, activation='relu'))
+# model.add(Dense(24, activation='relu'))
+# model.add(Dense(12, activation='relu'))
+# model.add(Dense(1))
+
+#    random_state=1000)
+# model.fit(x_train, y_train, epochs=700, batch_size=2000, verbose=0)
+# submission.to_csv(path2 + 'submit_0307_001.csv')
+
+#------------------
+
+
+
 
 
