@@ -24,24 +24,34 @@ model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
 model.fit(x_train, y_train, epochs=250, batch_size=2, 
-          validation_data=(x_val, y_val), verbose=1)
+            validation_data=(x_val, y_val), verbose=0)
 
 
 loss= model.evaluate(x_test, y_test)
-print('loss : ', loss) 
+print('\nLoss = ', loss) 
 
 
 result=model.predict([17])
-print('[17]의 예측값', result)
+print('\nPredict Value of [17] = ', result)
+
 
 
 
 ################  < 작업 결과 >  ##################
 
-# Epoch 250/250
-# 5/5 [==============================] - 0s 6ms/step - loss: 5.3006e-13 - val_loss: 2.7285e-12
-# 1/1 [==============================] - 0s 18ms/step - loss: 1.8190e-12
-# loss :  1.8189894035458565e-12
+1/5 [=====>........................] - ETA: 0s - loss: 1.1369e-13
+5/5 [==============================] - 0s 22ms/step - loss: 2.0037e-13 - val_loss: 5.7601e-12
+Epoch 250/250
 
-# [17]의 예측값 [[17.000004]]
-#
+1/5 [=====>........................] - ETA: 0s - loss: 2.2737e-13
+5/5 [==============================] - 0s 16ms/step - loss: 2.2169e-13 - val_loss: 5.7601e-12
+
+1/1 [==============================] - ETA: 0s - loss: 6.0633e-13
+1/1 [==============================] - 0s 48ms/step - loss: 6.0633e-13
+
+Loss =  6.063298192519884e-13
+
+Predict Value of [17] =  [[16.999998]]
+
+[Done] exited with code=0 in 81.097 seconds
+
