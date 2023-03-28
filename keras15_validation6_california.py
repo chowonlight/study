@@ -40,7 +40,7 @@ print('\nR2 = ', r2)
 
  (20640, 8) (20640,) 
 
-2023-03-28 09:57:03.901373: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library (oneDNN) to use the following CPU instructions in performance-critical operations:  AVX AVX2
+2023-03-28 09:57:03.901373: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
   1/194 [..............................] - ETA: 6s - loss: 0.6671
@@ -60,3 +60,4 @@ R2 =  0.47497506027938685
 
 [Done] exited with code=0 in 881.568 seconds
 
+   
