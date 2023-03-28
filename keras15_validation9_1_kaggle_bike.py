@@ -38,3 +38,34 @@ y_predict = model.predict(x_test)
 r2 = r2_score(y_test, y_predict)
 print('\nR2 = ', r2)
 
+
+
+################  < 작업 결과 >  ##################
+
+
+[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras15_validation9_1_kaggle_bike.py"
+2023-03-28 12:33:49.655274: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+  1/103 [..............................] - ETA: 4s - loss: 31409.9531
+ 12/103 [==>...........................] - ETA: 0s - loss: 23302.9688
+ 32/103 [========>.....................] - ETA: 0s - loss: 24150.1367
+ 51/103 [=============>................] - ETA: 0s - loss: 24897.5391
+ 69/103 [===================>..........] - ETA: 0s - loss: 24264.3730
+ 90/103 [=========================>....] - ETA: 0s - loss: 24227.8359
+103/103 [==============================] - 0s 3ms/step - loss: 24520.1445
+
+Loss =  24520.14453125
+
+  1/103 [..............................] - ETA: 38s
+ 22/103 [=====>........................] - ETA: 0s 
+ 42/103 [===========>..................] - ETA: 0s
+ 64/103 [=================>............] - ETA: 0s
+ 86/103 [========================>.....] - ETA: 0s
+103/103 [==============================] - 1s 2ms/step
+
+R2 =  0.2452326770457245
+
+[Done] exited with code=0 in 169.334 seconds
+
+  
