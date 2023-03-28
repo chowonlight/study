@@ -37,7 +37,7 @@ plt.show()
 ################  < 작업 결과 >  ##################
 
 
-[Running] python -u "c:\Users\sea bongja\OneDrive\바탕 화면\study\keras16_overfit3_diabetes.py"
+[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras16_overfit3_diabetes.py"
 
  (442, 10) (442,) 
 
