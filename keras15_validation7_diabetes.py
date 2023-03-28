@@ -36,3 +36,26 @@ r2 = r2_score(y_test, y_predict)
 print('\nR2 = ', r2)
 
 
+
+################  < 작업 결과 >  ##################
+
+[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras15_validation7_diabetes.py"
+
+ (442, 10) (442,) 
+
+2023-03-28 10:34:15.549910: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+1/5 [=====>........................] - ETA: 0s - loss: 2206.0732
+5/5 [==============================] - 0s 4ms/step - loss: 1999.5219
+
+Loss =  1999.5218505859375
+
+1/5 [=====>........................] - ETA: 0s
+5/5 [==============================] - 0s 4ms/step
+
+R2 =  0.678483024493153
+
+[Done] exited with code=0 in 36.744 seconds
+
+   
