@@ -32,3 +32,7 @@ y_predict = model.predict(x_test)
 r2 = r2_score(y_test, y_predict)
 print('\nR2 = ', r2)
 
+
+
+################  < 작업 결과 >  ##################
+
