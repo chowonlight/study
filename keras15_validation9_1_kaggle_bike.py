@@ -23,13 +23,13 @@ x_train, x_test, y_train, y_test = train_test_split(x, y, train_size=0.7, shuffl
 model = Sequential()
 model.add(Dense(32, input_dim=8))
 model.add(Dense(64))
+model.add(Dense(128))
 model.add(Dense(64))
-model.add(Dense(32))
-model.add(Dense(8))
+model.add(Dense(16))
 model.add(Dense(1))
 
 model.compile(loss='mse', optimizer='adam')
-model.fit(x_train, y_train, epochs=100, batch_size=20, verbose=0, validation_split=0.2)
+model.fit(x_train, y_train, epochs=300, batch_size=36, verbose=0, validation_split=0.2)
 
 loss = model.evaluate(x_test, y_test)
 print('\nLoss = ', loss)
@@ -43,29 +43,28 @@ print('\nR2 = ', r2)
 ################  < 작업 결과 >  ##################
 
 
-[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras15_validation9_1_kaggle_bike.py"
-2023-03-28 12:33:49.655274: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
+[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras15_validation9_2_kaggle_bike"
+2023-03-28 13:08:33.852102: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
 To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
 
-  1/103 [..............................] - ETA: 4s - loss: 31409.9531
- 12/103 [==>...........................] - ETA: 0s - loss: 23302.9688
- 32/103 [========>.....................] - ETA: 0s - loss: 24150.1367
- 51/103 [=============>................] - ETA: 0s - loss: 24897.5391
- 69/103 [===================>..........] - ETA: 0s - loss: 24264.3730
- 90/103 [=========================>....] - ETA: 0s - loss: 24227.8359
-103/103 [==============================] - 0s 3ms/step - loss: 24520.1445
+  1/103 [..............................] - ETA: 4s - loss: 31417.9258
+ 10/103 [=>............................] - ETA: 0s - loss: 23715.9570
+ 29/103 [=======>......................] - ETA: 0s - loss: 23603.6602
+ 51/103 [=============>................] - ETA: 0s - loss: 24821.0078
+ 72/103 [===================>..........] - ETA: 0s - loss: 24138.8984
+ 89/103 [========================>.....] - ETA: 0s - loss: 24069.9609
+103/103 [==============================] - 0s 3ms/step - loss: 24458.9180
 
-Loss =  24520.14453125
+Loss =  24458.91796875
 
-  1/103 [..............................] - ETA: 38s
- 22/103 [=====>........................] - ETA: 0s 
- 42/103 [===========>..................] - ETA: 0s
- 64/103 [=================>............] - ETA: 0s
- 86/103 [========================>.....] - ETA: 0s
-103/103 [==============================] - 1s 2ms/step
+  1/103 [..............................] - ETA: 30s
+ 27/103 [======>.......................] - ETA: 0s 
+ 55/103 [===============>..............] - ETA: 0s
+ 96/103 [==========================>...] - ETA: 0s
+103/103 [==============================] - 0s 2ms/step
 
-R2 =  0.2452326770457245
+R2 =  0.24711725291789421
 
-[Done] exited with code=0 in 169.334 seconds
+[Done] exited with code=0 in 218.063 seconds
 
   
