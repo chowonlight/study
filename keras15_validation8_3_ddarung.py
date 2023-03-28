@@ -54,3 +54,24 @@ submission['count'] = y_submit
 
 submission.to_csv(path_save + 'submit_0328_0103.csv')
 
+
+
+################  < 작업 결과 >  ##################
+
+[Running] python -u "c:\Users\seongja\OneDrive\바탕 화면\study\keras15_validation8_3_ddarung.py"
+2023-03-28 12:14:11.395037: I tensorflow/core/platform/cpu_feature_guard.cc:193] This TensorFlow binary is optimized with oneAPI Deep Neural Network Library ...
+To enable them in other operations, rebuild TensorFlow with the appropriate compiler flags.
+
+ 1/13 [=>............................] - ETA: 0s - loss: 1395.1404
+ 2/13 [===>..........................] - ETA: 0s - loss: 2364.0703
+13/13 [==============================] - 0s 6ms/step - loss: 2981.2278
+
+Loss =  2981.227783203125
+
+R2 =  0.5498870607533412
+
+RMSE =  54.60061685437196
+
+[Done] exited with code=0 in 329.625 seconds
+
+  
